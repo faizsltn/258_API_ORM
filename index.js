@@ -47,7 +47,7 @@ app.put('/komik/:id', async (req, res) => {
     try {
         const komik = await db.komik.findByPk(id);
         if (!komik){
-            return res.status(404).send({message: 'komik tidak ditemukan'})
+            return res.status(404).send({message: 'komik tidak ditemukan'});
         }
 
         await komik.update(data);
